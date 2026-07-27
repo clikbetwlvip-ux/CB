@@ -1,628 +1,672 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
+<meta charset="UTF-8">
 
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
 
-    <meta name="theme-color" content="#09000f">
+<meta name="theme-color" content="#09000f">
 
-    <title>CLICKBET88 Fantasy Portal</title>
+<title>CLICKBET88 Fantasy Portal</title>
 
-    <link rel="stylesheet" href="./style.css">
+<link rel="stylesheet" href="./style.css">
 </head>
 
 <body>
 
-    <!-- ==============================
-         LOADING SCREEN
-    =============================== -->
-    <section id="loadingScreen" class="screen active">
-
-        <div class="loading-background"></div>
-
-        <div
-            id="loadingParticles"
-            class="particle-container"
-        ></div>
-
-        <div class="loading-content">
-
-            <img
-                class="logo loading-logo"
-                src="https://clickbet88sedekahrejeki05.xyz/storage/webpersonalize/d54f5304-03b3-49f7-b283-e6fe0c595ca7.gif"
-                alt="CLICKBET88"
-            >
-
-            <p class="loading-title">
-                MEMBUKA FANTASY PORTAL
-            </p>
-
-            <div class="loading-bar">
-
-                <div
-                    id="loadingProgress"
-                    class="loading-progress"
-                ></div>
-
-            </div>
-
-            <div class="loading-information">
-
-                <span id="loadingMessage">
-                    Menyiapkan dunia...
-                </span>
-
-                <strong id="loadingPercent">
-                    0%
-                </strong>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- ==============================
-         OPENING SCREEN
-    =============================== -->
-    <section id="openingScreen" class="screen">
-
-        <div class="opening-background"></div>
-        <div class="opening-overlay"></div>
-
-        <div
-            id="openingStars"
-            class="star-container"
-        ></div>
-
-        <div
-            class="portal-glow portal-glow-left"
-        ></div>
-
-        <div
-            class="portal-glow portal-glow-right"
-        ></div>
-
-        <main class="opening-content">
-
-            <img
-                class="logo opening-logo"
-                src="https://clickbet88sedekahrejeki05.xyz/storage/webpersonalize/d54f5304-03b3-49f7-b283-e6fe0c595ca7.gif"
-                alt="CLICKBET88"
-            >
-
-            <span class="opening-label">
-                WELCOME TO
-            </span>
-
-            <h1 class="opening-title">
-                FANTASY
-
-                <strong>
-                    PORTAL
-                </strong>
-            </h1>
-
-            <p class="opening-description">
-                Masuki dunia anime, mainkan berbagai tantangan,
-                dan nikmati pengalaman khusus member CLICKBET88.
-            </p>
-
-            <button
-                id="enterButton"
-                class="enter-button"
-                type="button"
-            >
-
-                <span class="button-shine"></span>
-
-                <span class="button-text">
-                    ⚔️ MASUK KE PORTAL
-                </span>
-
-            </button>
-
-            <button
-                id="soundButton"
-                class="sound-button"
-                type="button"
-            >
-                🔊 Suara Aktif
-            </button>
-
-            <p class="version-text">
-                CLICKBET88 FANTASY PORTAL • V0.3
-            </p>
-
-        </main>
-
-    </section>
-
-
-    <!-- ==============================
-         LOGIN SCREEN
-    =============================== -->
-    <section id="loginScreen" class="screen">
-
-        <div class="login-background"></div>
-        <div class="login-overlay"></div>
-
-        <div
-            class="login-glow login-glow-left"
-        ></div>
-
-        <div
-            class="login-glow login-glow-right"
-        ></div>
-
-        <main class="login-container">
-
-            <div class="login-card">
-
-                <div class="login-icon">
-                    ⚔️
-                </div>
-
-                <img
-                    class="logo login-logo"
-                    src="https://clickbet88sedekahrejeki05.xyz/storage/webpersonalize/d54f5304-03b3-49f7-b283-e6fe0c595ca7.gif"
-                    alt="CLICKBET88"
-                >
-
-                <span class="login-label">
-                    MEMBER ACCESS
-                </span>
-
-                <h2 class="login-title">
-                    Masuk ke Portal
-                </h2>
-
-                <p class="login-description">
-                    Masukkan username member untuk melanjutkan
-                    perjalanan ke dunia Fantasy Portal.
-                </p>
-
-                <form
-                    id="loginForm"
-                    class="login-form"
-                >
-
-                    <div class="input-group">
-
-                        <label for="usernameInput">
-                            Username Member
-                        </label>
-
-                        <div class="input-wrapper">
-
-                            <span class="input-icon">
-                                👤
-                            </span>
-
-                            <input
-                                id="usernameInput"
-                                name="username"
-                                type="text"
-                                placeholder="Masukkan username"
-                                autocomplete="off"
-                                maxlength="20"
-                            >
-
-                        </div>
-
-                        <small
-                            id="usernameError"
-                            class="input-error"
-                        ></small>
-
-                    </div>
-
-                    <button
-                        id="loginButton"
-                        class="login-button"
-                        type="submit"
-                    >
-
-                        <span class="button-shine"></span>
-
-                        <span class="button-text">
-                            ⚔️ MULAI PETUALANGAN
-                        </span>
-
-                    </button>
-
-                </form>
-
-                <button
-                    id="loginBackButton"
-                    class="login-back-button"
-                    type="button"
-                >
-                    ← KEMBALI KE PORTAL
-                </button>
-
-                <p class="login-footer">
-                    Selamat datang di dunia khusus member CLICKBET88.
-                </p>
-
-            </div>
-
-        </main>
-
-    </section>
-
-
-    <!-- ==============================
-         LOBBY SCREEN
-    =============================== -->
-    <section id="lobbyScreen" class="screen">
-
-        <div class="lobby-background"></div>
-        <div class="lobby-overlay"></div>
-
-        <main class="lobby-content">
-
-            <div class="lobby-header">
-
-                <img
-                    class="logo lobby-logo"
-                    src="https://clickbet88sedekahrejeki05.xyz/storage/webpersonalize/d54f5304-03b3-49f7-b283-e6fe0c595ca7.gif"
-                    alt="CLICKBET88"
-                >
-
-                <span class="lobby-label">
-                    FANTASY ADVENTURE
-                </span>
-
-                <h2 class="lobby-title">
-                    Selamat Datang,
-                    <strong id="memberName">
-                        Member
-                    </strong>
-                </h2>
-
-                <p class="lobby-description">
-                    Pilih petualangan yang ingin dimainkan.
-                </p>
-               <div class="member-balance">
-
-    <div class="balance-item">
-        <span class="balance-icon">🪙</span>
-
-        <div>
-            <small>Coins</small>
-            <strong id="coinBalance">0</strong>
-        </div>
-    </div>
-
-    <div class="balance-item">
-        <span class="balance-icon">💎</span>
-
-        <div>
-            <small>Diamond</small>
-            <strong id="diamondBalance">0</strong>
-        </div>
-    </div>
-
-</div> 
-                    </div>
-
-
-<div class="lobby-menu">
-
-    <button
-        class="menu-card"
-        type="button"
-        data-menu="Daily Reward"
-    >
-        <span class="menu-icon">🎁</span>
-
-        <span class="menu-info">
-            <strong>Daily Reward</strong>
-            <small>Klaim hadiah login harian</small>
-        </span>
-
-        <span class="menu-arrow">›</span>
-    </button>
-
-
-    <button
-        class="menu-card"
-        type="button"
-        data-menu="Lucky Spin"
-    >
-        <span class="menu-icon">🎡</span>
-
-        <span class="menu-info">
-            <strong>Lucky Spin</strong>
-            <small>Putar roda keberuntungan</small>
-        </span>
-
-        <span class="menu-arrow">›</span>
-    </button>
-
-
-    <button
-        class="menu-card"
-        type="button"
-        data-menu="Inventory"
-    >
-        <span class="menu-icon">🎒</span>
-
-        <span class="menu-info">
-            <strong>Inventory</strong>
-            <small>Lihat semua item yang kamu miliki</small>
-        </span>
-
-        <span class="menu-arrow">›</span>
-    </button>
-
-
-    <button
-        class="menu-card"
-        type="button"
-        data-menu="Treasure"
-    >
-        <span class="menu-icon">📦</span>
-
-        <span class="menu-info">
-            <strong>Treasure</strong>
-            <small>Buka peti misterius</small>
-        </span>
-
-        <span class="menu-arrow">›</span>
-    </button>
-
-
-    <button
-        class="menu-card"
-        type="button"
-        data-menu="Event"
-    >
-        <span class="menu-icon">🎪</span>
-
-        <span class="menu-info">
-            <strong>Event Center</strong>
-            <small>Lihat event terbaru</small>
-        </span>
-
-        <span class="menu-arrow">›</span>
-    </button>
-
-</div>
-
-
-            <button
-                id="logoutButton"
-                class="logout-button"
-                type="button"
-            >
-                ← KELUAR
-            </button>
-
-        </main>
-
-    </section>
 <!-- ==============================
-     DAILY REWARD SCREEN
+     LOADING SCREEN
 =============================== -->
-<section id="dailyRewardScreen" class="screen">
+<section id="loadingScreen" class="screen active">
 
-    <div class="reward-background"></div>
-    <div class="reward-overlay"></div>
+    <div class="loading-background"></div>
 
-    <main class="reward-content">
+    <div
+        id="loadingParticles"
+        class="particle-container"
+    ></div>
 
-        <button
-            id="rewardBackButton"
-            class="reward-back-button"
-            type="button"
-        >
-            ← KEMBALI
-        </button>
+    <div class="loading-content">
 
         <img
-            class="logo reward-logo"
+            class="logo loading-logo"
             src="https://clickbet88sedekahrejeki05.xyz/storage/webpersonalize/d54f5304-03b3-49f7-b283-e6fe0c595ca7.gif"
             alt="CLICKBET88"
         >
 
-        <span class="reward-label">
-            MEMBER DAILY BONUS
-        </span>
-
-        <h2 class="reward-title">
-            Daily Reward
-        </h2>
-
-        <p class="reward-description">
-            Login setiap hari dan klaim hadiah harianmu.
+        <p class="loading-title">
+            MEMBUKA FANTASY PORTAL
         </p>
 
-        <div class="reward-grid">
+        <div class="loading-bar">
 
-            <div class="reward-card active-reward">
-                <span class="reward-day">Hari 1</span>
-                <span class="reward-icon">🪙</span>
-                <strong>10 Coins</strong>
-                <small>Hari ini</small>
-            </div>
-
-            <div class="reward-card">
-                <span class="reward-day">Hari 2</span>
-                <span class="reward-icon">💎</span>
-                <strong>20 Coins</strong>
-                <small>Terkunci</small>
-            </div>
-
-            <div class="reward-card">
-                <span class="reward-day">Hari 3</span>
-                <span class="reward-icon">🎁</span>
-                <strong>30 Coins</strong>
-                <small>Terkunci</small>
-            </div>
-
-            <div class="reward-card">
-                <span class="reward-day">Hari 4</span>
-                <span class="reward-icon">⭐</span>
-                <strong>40 Coins</strong>
-                <small>Terkunci</small>
-            </div>
-
-            <div class="reward-card">
-                <span class="reward-day">Hari 5</span>
-                <span class="reward-icon">💰</span>
-                <strong>50 Coins</strong>
-                <small>Terkunci</small>
-            </div>
-
-            <div class="reward-card">
-                <span class="reward-day">Hari 6</span>
-                <span class="reward-icon">🏆</span>
-                <strong>75 Coins</strong>
-                <small>Terkunci</small>
-            </div>
-
-            <div class="reward-card special-reward">
-                <span class="reward-day">Hari 7</span>
-                <span class="reward-icon">👑</span>
-                <strong>100 Coins</strong>
-                <small>Hadiah Utama</small>
-            </div>
+            <div
+                id="loadingProgress"
+                class="loading-progress"
+            ></div>
 
         </div>
 
+        <div class="loading-information">
+
+            <span id="loadingMessage">
+                Menyiapkan dunia...
+            </span>
+
+            <strong id="loadingPercent">
+                0%
+            </strong>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ==============================
+     OPENING SCREEN
+=============================== -->
+<section id="openingScreen" class="screen">
+
+    <div class="opening-background"></div>
+    <div class="opening-overlay"></div>
+
+    <div
+        id="openingStars"
+        class="star-container"
+    ></div>
+
+    <div
+        class="portal-glow portal-glow-left"
+    ></div>
+
+    <div
+        class="portal-glow portal-glow-right"
+    ></div>
+
+    <main class="opening-content">
+
+        <img
+            class="logo opening-logo"
+            src="https://clickbet88sedekahrejeki05.xyz/storage/webpersonalize/d54f5304-03b3-49f7-b283-e6fe0c595ca7.gif"
+            alt="CLICKBET88"
+        >
+
+        <span class="opening-label">
+            WELCOME TO
+        </span>
+
+        <h1 class="opening-title">
+            FANTASY
+
+            <strong>
+                PORTAL
+            </strong>
+        </h1>
+
+        <p class="opening-description">
+            Masuki dunia anime, mainkan berbagai tantangan,
+            dan nikmati pengalaman khusus member CLICKBET88.
+        </p>
+
         <button
-            id="claimRewardButton"
-            class="claim-reward-button"
+            id="enterButton"
+            class="enter-button"
             type="button"
         >
+
             <span class="button-shine"></span>
 
             <span class="button-text">
-                🎁 KLAIM HADIAH HARI INI
+                ⚔️ MASUK KE PORTAL
             </span>
+
         </button>
 
-        <p id="rewardStatus" class="reward-status">
-            Hadiah hari pertama tersedia.
+        <button
+            id="soundButton"
+            class="sound-button"
+            type="button"
+        >
+            🔊 Suara Aktif
+        </button>
+
+        <p class="version-text">
+            CLICKBET88 FANTASY PORTAL • V0.3
         </p>
 
     </main>
 
 </section>
- <!-- ==============================
-     LUCKY SPIN SCREEN
+
+
+<!-- ==============================
+     LOGIN SCREEN
+=============================== -->
+<section id="loginScreen" class="screen">
+
+    <div class="login-background"></div>
+    <div class="login-overlay"></div>
+
+    <div
+        class="login-glow login-glow-left"
+    ></div>
+
+    <div
+        class="login-glow login-glow-right"
+    ></div>
+
+    <main class="login-container">
+
+        <div class="login-card">
+
+            <div class="login-icon">
+                ⚔️
+            </div>
+
+            <img
+                class="logo login-logo"
+                src="https://clickbet88sedekahrejeki05.xyz/storage/webpersonalize/d54f5304-03b3-49f7-b283-e6fe0c595ca7.gif"
+                alt="CLICKBET88"
+            >
+
+            <span class="login-label">
+                MEMBER ACCESS
+            </span>
+
+            <h2 class="login-title">
+                Masuk ke Portal
+            </h2>
+
+            <p class="login-description">
+                Masukkan username member untuk melanjutkan
+                perjalanan ke dunia Fantasy Portal.
+            </p>
+
+            <form
+                id="loginForm"
+                class="login-form"
+            >
+
+                <div class="input-group">
+
+                    <label for="usernameInput">
+                        Username Member
+                    </label>
+
+                    <div class="input-wrapper">
+
+                        <span class="input-icon">
+                            👤
+                        </span>
+
+                        <input
+                            id="usernameInput"
+                            name="username"
+                            type="text"
+                            placeholder="Masukkan username"
+                            autocomplete="off"
+                            maxlength="20"
+                        >
+
+                    </div>
+
+                    <small
+                        id="usernameError"
+                        class="input-error"
+                    ></small>
+
+                </div>
+
+                <button
+                    id="loginButton"
+                    class="login-button"
+                    type="submit"
+                >
+
+                    <span class="button-shine"></span>
+
+                    <span class="button-text">
+                        ⚔️ MULAI PETUALANGAN
+                    </span>
+
+                </button>
+
+            </form>
+
+            <button
+                id="loginBackButton"
+                class="login-back-button"
+                type="button"
+            >
+                ← KEMBALI KE PORTAL
+            </button>
+
+            <p class="login-footer">
+                Selamat datang di dunia khusus member CLICKBET88.
+            </p>
+
+        </div>
+
+    </main>
+
+</section>
+
+
+<!-- ==============================
+     LOBBY SCREEN
+=============================== -->
+<section id="lobbyScreen" class="screen">
+
+    <div class="lobby-background"></div>
+    <div class="lobby-overlay"></div>
+
+    <main class="lobby-content">
+
+        <div class="lobby-header">
+
+            <img
+                class="logo lobby-logo"
+                src="https://clickbet88sedekahrejeki05.xyz/storage/webpersonalize/d54f5304-03b3-49f7-b283-e6fe0c595ca7.gif"
+                alt="CLICKBET88"
+            >
+
+            <span class="lobby-label">
+                FANTASY ADVENTURE
+            </span>
+
+            <h2 class="lobby-title">
+                Selamat Datang,
+                <strong id="memberName">
+                    Member
+                </strong>
+            </h2>
+
+            <p class="lobby-description">
+                Pilih petualangan yang ingin dimainkan.
+            </p>
+           <div class="member-balance">
+
+<div class="balance-item">
+    <span class="balance-icon">🪙</span>
+
+    <div>
+        <small>Coins</small>
+        <strong id="coinBalance">0</strong>
+    </div>
+</div>
+
+<div class="balance-item">
+    <span class="balance-icon">💎</span>
+
+    <div>
+        <small>Diamond</small>
+        <strong id="diamondBalance">0</strong>
+    </div>
+</div>
+
+</div> 
+                </div>
+
+
+<div class="lobby-menu">
+
+<button
+    class="menu-card"
+    type="button"
+    data-menu="Daily Reward"
+>
+    <span class="menu-icon">🎁</span>
+
+    <span class="menu-info">
+        <strong>Daily Reward</strong>
+        <small>Klaim hadiah login harian</small>
+    </span>
+
+    <span class="menu-arrow">›</span>
+</button>
+
+
+<button
+    class="menu-card"
+    type="button"
+    data-menu="Lucky Spin"
+>
+    <span class="menu-icon">🎡</span>
+
+    <span class="menu-info">
+        <strong>Lucky Spin</strong>
+        <small>Putar roda keberuntungan</small>
+    </span>
+
+    <span class="menu-arrow">›</span>
+</button>
+
+
+<button
+    class="menu-card"
+    type="button"
+    data-menu="Inventory"
+>
+    <span class="menu-icon">🎒</span>
+
+    <span class="menu-info">
+        <strong>Inventory</strong>
+        <small>Lihat semua item yang kamu miliki</small>
+    </span>
+
+    <span class="menu-arrow">›</span>
+</button>
+
+
+<button
+    class="menu-card"
+    type="button"
+    data-menu="Treasure"
+>
+    <span class="menu-icon">📦</span>
+
+    <span class="menu-info">
+        <strong>Treasure</strong>
+        <small>Buka peti misterius</small>
+    </span>
+
+    <span class="menu-arrow">›</span>
+</button>
+
+
+<button
+    class="menu-card"
+    type="button"
+    data-menu="Event"
+>
+    <span class="menu-icon">🎪</span>
+
+    <span class="menu-info">
+        <strong>Event Center</strong>
+        <small>Lihat event terbaru</small>
+    </span>
+
+    <span class="menu-arrow">›</span>
+</button>
+
+</div>
+
+
+        <button
+            id="logoutButton"
+            class="logout-button"
+            type="button"
+        >
+            ← KELUAR
+        </button>
+
+    </main>
+
+</section>
+<!-- ==============================
+ DAILY REWARD SCREEN
+=============================== -->
+<section id="dailyRewardScreen" class="screen">
+
+<div class="reward-background"></div>
+<div class="reward-overlay"></div>
+
+<main class="reward-content">
+
+    <button
+        id="rewardBackButton"
+        class="reward-back-button"
+        type="button"
+    >
+        ← KEMBALI
+    </button>
+
+    <img
+        class="logo reward-logo"
+        src="https://clickbet88sedekahrejeki05.xyz/storage/webpersonalize/d54f5304-03b3-49f7-b283-e6fe0c595ca7.gif"
+        alt="CLICKBET88"
+    >
+
+    <span class="reward-label">
+        MEMBER DAILY BONUS
+    </span>
+
+    <h2 class="reward-title">
+        Daily Reward
+    </h2>
+
+    <p class="reward-description">
+        Login setiap hari dan klaim hadiah harianmu.
+    </p>
+
+    <div class="reward-grid">
+
+        <div class="reward-card active-reward">
+            <span class="reward-day">Hari 1</span>
+            <span class="reward-icon">🪙</span>
+            <strong>10 Coins</strong>
+            <small>Hari ini</small>
+        </div>
+
+        <div class="reward-card">
+            <span class="reward-day">Hari 2</span>
+            <span class="reward-icon">💎</span>
+            <strong>20 Coins</strong>
+            <small>Terkunci</small>
+        </div>
+
+        <div class="reward-card">
+            <span class="reward-day">Hari 3</span>
+            <span class="reward-icon">🎁</span>
+            <strong>30 Coins</strong>
+            <small>Terkunci</small>
+        </div>
+
+        <div class="reward-card">
+            <span class="reward-day">Hari 4</span>
+            <span class="reward-icon">⭐</span>
+            <strong>40 Coins</strong>
+            <small>Terkunci</small>
+        </div>
+
+        <div class="reward-card">
+            <span class="reward-day">Hari 5</span>
+            <span class="reward-icon">💰</span>
+            <strong>50 Coins</strong>
+            <small>Terkunci</small>
+        </div>
+
+        <div class="reward-card">
+            <span class="reward-day">Hari 6</span>
+            <span class="reward-icon">🏆</span>
+            <strong>75 Coins</strong>
+            <small>Terkunci</small>
+        </div>
+
+        <div class="reward-card special-reward">
+            <span class="reward-day">Hari 7</span>
+            <span class="reward-icon">👑</span>
+            <strong>100 Coins</strong>
+            <small>Hadiah Utama</small>
+        </div>
+
+    </div>
+
+    <button
+        id="claimRewardButton"
+        class="claim-reward-button"
+        type="button"
+    >
+        <span class="button-shine"></span>
+
+        <span class="button-text">
+            🎁 KLAIM HADIAH HARI INI
+        </span>
+    </button>
+
+    <p id="rewardStatus" class="reward-status">
+        Hadiah hari pertama tersedia.
+    </p>
+
+</main>
+
+</section>
+<!-- ==============================
+ LUCKY SPIN SCREEN
 =============================== -->
 <section id="luckySpinScreen" class="screen">
 
-    <div class="spin-background"></div>
-    <div class="spin-overlay"></div>
+<div class="spin-background"></div>
+<div class="spin-overlay"></div>
 
-    <main class="spin-content">
+<main class="spin-content">
 
-        <button
-            id="spinBackButton"
-            class="spin-back-button"
-            type="button"
-        >
-            ← KEMBALI
-        </button>
+    <button
+        id="spinBackButton"
+        class="spin-back-button"
+        type="button"
+    >
+        ← KEMBALI
+    </button>
 
-        <img
-            class="logo spin-logo"
-            src="https://clickbet88sedekahrejeki05.xyz/storage/webpersonalize/d54f5304-03b3-49f7-b283-e6fe0c595ca7.gif"
-            alt="CLICKBET88"
-        >
+    <img
+        class="logo spin-logo"
+        src="https://clickbet88sedekahrejeki05.xyz/storage/webpersonalize/d54f5304-03b3-49f7-b283-e6fe0c595ca7.gif"
+        alt="CLICKBET88"
+    >
 
-        <span class="spin-label">
-            FANTASY LUCKY WHEEL
+    <span class="spin-label">
+        FANTASY LUCKY WHEEL
+    </span>
+
+    <h2 class="spin-title">
+        Lucky Spin
+    </h2>
+
+    <p class="spin-description">
+        Putar roda keberuntungan dan dapatkan hadiah spesial.
+    </p>
+
+    <div class="wheel-wrapper">
+
+        <div class="wheel-pointer">
+            ▼
+        </div>
+
+     <div id="spinWheel" class="spin-wheel">
+
+<div class="wheel-label label-1">10 Coins</div>
+<div class="wheel-label label-2">20 Coins</div>
+<div class="wheel-label label-3">50 Coins</div>
+<div class="wheel-label label-4">100 Coins</div>
+<div class="wheel-label label-5">1 Diamond</div>
+<div class="wheel-label label-6">Mystery Box</div>
+<div class="wheel-label label-7">Free Spin</div>
+<div class="wheel-label label-8">Jackpot</div>
+
+<div class="wheel-center">
+    <span>🎡</span>
+</div>
+
+</div>
+
+    </div>
+
+    <div class="spin-result">
+
+        <span>Hadiah terakhir</span>
+
+        <strong id="spinResultText">
+            Belum ada hadiah
+        </strong>
+
+    </div>
+
+    <button
+        id="spinButton"
+        class="spin-button"
+        type="button"
+    >
+        <span class="button-shine"></span>
+
+        <span class="button-text">
+            🎡 PUTAR SEKARANG
         </span>
+    </button>
 
-        <h2 class="spin-title">
-            Lucky Spin
-        </h2>
+    <p id="spinStatus" class="spin-status">
+        Kamu memiliki 1 kesempatan spin.
+    </p>
 
-        <p class="spin-description">
-            Putar roda keberuntungan dan dapatkan hadiah spesial.
-        </p>
+</main>
 
-        <div class="wheel-wrapper">
+</section>   
+<!-- ==============================
+ INVENTORY SCREEN
+=============================== -->
+<section id="inventoryScreen" class="screen">
 
-            <div class="wheel-pointer">
-                ▼
-            </div>
+<div class="inventory-container">
 
-         <div id="spinWheel" class="spin-wheel">
+    <button
+        id="inventoryBackButton"
+        class="spin-back-button"
+        type="button"
+    >
+        ← KEMBALI
+    </button>
 
-    <div class="wheel-label label-1">10 Coins</div>
-    <div class="wheel-label label-2">20 Coins</div>
-    <div class="wheel-label label-3">50 Coins</div>
-    <div class="wheel-label label-4">100 Coins</div>
-    <div class="wheel-label label-5">1 Diamond</div>
-    <div class="wheel-label label-6">Mystery Box</div>
-    <div class="wheel-label label-7">Free Spin</div>
-    <div class="wheel-label label-8">Jackpot</div>
+    <h2 class="spin-title">
+        🎒 Inventory
+    </h2>
 
-    <div class="wheel-center">
-        <span>🎡</span>
+    <p class="spin-description">
+        Semua hadiah yang kamu miliki akan muncul di sini.
+    </p>
+
+    <div class="inventory-list">
+
+        <div class="inventory-item">
+            <span>📦 Mystery Box</span>
+            <strong id="mysteryBoxAmount">x0</strong>
+        </div>
+
+        <div class="inventory-item">
+            <span>🎫 Free Spin</span>
+            <strong id="freeSpinAmount">x0</strong>
+        </div>
+
+        <div class="inventory-item">
+            <span>🏆 Jackpot Token</span>
+            <strong id="jackpotTokenAmount">x0</strong>
+        </div>
+
     </div>
 
 </div>
 
-        </div>
+</section>
+<!-- ==============================
+     NOTIFIKASI
+=============================== -->
+<div
+    id="notification"
+    class="notification"
+>
 
-        <div class="spin-result">
+    <span id="notificationText">
+        Selamat datang.
+    </span>
 
-            <span>Hadiah terakhir</span>
-
-            <strong id="spinResultText">
-                Belum ada hadiah
-            </strong>
-
-        </div>
-
-        <button
-            id="spinButton"
-            class="spin-button"
-            type="button"
-        >
-            <span class="button-shine"></span>
-
-            <span class="button-text">
-                🎡 PUTAR SEKARANG
-            </span>
-        </button>
-
-        <p id="spinStatus" class="spin-status">
-            Kamu memiliki 1 kesempatan spin.
-        </p>
-
-    </main>
-
-</section>   
-
-    <!-- ==============================
-         NOTIFIKASI
-    =============================== -->
-    <div
-        id="notification"
-        class="notification"
-    >
-
-        <span id="notificationText">
-            Selamat datang.
-        </span>
-
-    </div>
+</div>
 
 
-    <script src="./script.js"></script>
+<script src="./script.js"></script>
 
 </body>
 </html>
