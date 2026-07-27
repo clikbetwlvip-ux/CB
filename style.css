@@ -1199,3 +1199,157 @@ img {
         font-size: 31px;
     }
 }
+/* =========================
+   LUCKY SPIN SCREEN
+========================= */
+
+.spin-background{
+    position:absolute;
+    inset:0;
+    background:
+        radial-gradient(circle at top,
+        rgba(255,190,60,.18),
+        transparent 40%),
+        linear-gradient(160deg,#120018,#250038,#09000f);
+}
+
+.spin-overlay{
+    position:absolute;
+    inset:0;
+    background:rgba(0,0,0,.35);
+}
+
+.spin-content{
+    position:relative;
+    z-index:2;
+
+    width:min(900px,94%);
+    margin:auto;
+
+    text-align:center;
+
+    padding:35px 25px;
+}
+
+.spin-back-button{
+    position:absolute;
+    left:0;
+    top:0;
+}
+
+.spin-logo{
+    width:min(270px,70%);
+    margin:auto;
+    display:block;
+}
+
+.spin-label{
+    display:inline-block;
+    margin-top:12px;
+    color:#ffd95f;
+    font-size:12px;
+    letter-spacing:2px;
+    font-weight:bold;
+}
+
+.spin-title{
+    margin-top:15px;
+    color:white;
+    font-size:40px;
+}
+
+.spin-description{
+    color:#cccccc;
+    margin-bottom:25px;
+}
+
+.wheel-wrapper{
+    position:relative;
+
+    width:320px;
+    height:320px;
+
+    margin:30px auto;
+}
+
+.wheel-pointer{
+    position:absolute;
+    left:50%;
+    top:-18px;
+
+    transform:translateX(-50%);
+
+    color:#ffd84d;
+    font-size:36px;
+    z-index:5;
+}
+
+.spin-wheel{
+    width:320px;
+    height:320px;
+
+    border-radius:50%;
+
+    border:10px solid #ffcf40;
+
+    background:
+    conic-gradient(
+        #ffbe30 0deg 45deg,
+        #6c27c7 45deg 90deg,
+        #ff8a00 90deg 135deg,
+        #9126ff 135deg 180deg,
+        #ffbe30 180deg 225deg,
+        #6c27c7 225deg 270deg,
+        #ff8a00 270deg 315deg,
+        #9126ff 315deg 360deg
+    );
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    box-shadow:
+        0 0 35px rgba(255,190,40,.25);
+
+    transition:transform 5s cubic-bezier(.15,.95,.15,1);
+}
+
+.wheel-center{
+    width:90px;
+    height:90px;
+
+    border-radius:50%;
+
+    background:white;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    font-size:42px;
+}
+
+.spin-button{
+    margin-top:20px;
+}
+
+.spin-result{
+    margin-top:15px;
+}
+
+.spin-result span{
+    display:block;
+    color:#bbbbbb;
+}
+
+.spin-result strong{
+    display:block;
+    margin-top:8px;
+    color:#ffd95f;
+    font-size:22px;
+}
+
+.spin-status{
+    margin-top:12px;
+    color:#bbbbbb;
+}
