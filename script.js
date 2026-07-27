@@ -1,72 +1,53 @@
 "use strict";
 
 document.addEventListener("DOMContentLoaded", () => {
-    const loadingScreen =
-        document.getElementById("loadingScreen");
+    const loadingScreen = document.getElementById("loadingScreen");
+    const openingScreen = document.getElementById("openingScreen");
+    const loginScreen = document.getElementById("loginScreen");
+    const lobbyScreen = document.getElementById("lobbyScreen");
 
-    const openingScreen =
-        document.getElementById("openingScreen");
+    const loadingProgress = document.getElementById("loadingProgress");
+    const loadingPercent = document.getElementById("loadingPercent");
+    const loadingMessage = document.getElementById("loadingMessage");
 
-    const welcomeScreen =
-        document.getElementById("welcomeScreen");
+    const loadingParticles = document.getElementById("loadingParticles");
+    const openingStars = document.getElementById("openingStars");
 
-    const loadingProgress =
-        document.getElementById("loadingProgress");
+    const enterButton = document.getElementById("enterButton");
+    const soundButton = document.getElementById("soundButton");
 
-    const loadingPercent =
-        document.getElementById("loadingPercent");
+    const loginForm = document.getElementById("loginForm");
+    const usernameInput = document.getElementById("usernameInput");
+    const usernameError = document.getElementById("usernameError");
+    const loginBackButton = document.getElementById("loginBackButton");
 
-    const loadingMessage =
-        document.getElementById("loadingMessage");
+    const memberName = document.getElementById("memberName");
+    const logoutButton = document.getElementById("logoutButton");
 
-    const particleContainer =
-        document.getElementById("loadingParticles");
-
-    const starContainer =
-        document.getElementById("openingStars");
-
-    const enterButton =
-        document.getElementById("enterButton");
-
-    const soundButton =
-        document.getElementById("soundButton");
-
-    const backButton =
-        document.getElementById("backButton");
-
-    const notification =
-        document.getElementById("notification");
-
-    const notificationText =
-        document.getElementById("notificationText");
+    const notification = document.getElementById("notification");
+    const notificationText = document.getElementById("notificationText");
 
     const loadingMessages = [
         "Menyiapkan dunia...",
+        "Membuka portal...",
         "Memanggil para hero...",
-        "Membuka portal anime...",
-        "Menyiapkan efek visual...",
+        "Menyiapkan petualangan...",
         "Portal siap dibuka..."
     ];
 
     let soundEnabled = true;
-    let notificationTimer = null;
-
+    let notificationTimer;
 
     function showScreen(targetScreen) {
-        const screens =
-            document.querySelectorAll(".screen");
-
-        screens.forEach((screen) => {
+        document.querySelectorAll(".screen").forEach((screen) => {
             screen.classList.remove("active");
         });
 
         targetScreen.classList.add("active");
     }
 
-
     function showNotification(message) {
         notificationText.textContent = message;
-
         notification.classList.add("show");
 
         clearTimeout(notificationTimer);
@@ -76,140 +57,87 @@ document.addEventListener("DOMContentLoaded", () => {
         }, 2200);
     }
 
-
     function createParticles() {
-        for (let index = 0; index < 38; index += 1) {
-            const particle =
-                document.createElement("span");
+        for (let index = 0; index < 35; index += 1) {
+            const particle = document.createElement("span");
 
             particle.className = "particle";
 
-            const size =
-                Math.random() * 4 + 2;
+            const size = Math.random() * 4 + 2;
 
-            particle.style.width =
-                `${size}px`;
+            particle.style.width = `${size}px`;
+            particle.style.height = `${size}px`;
+            particle.style.left = `${Math.random() * 100}%`;
+            particle.style.animationDuration = `${Math.random() * 5 + 4}s`;
+            particle.style.animationDelay = `${Math.random() * 5}s`;
 
-            particle.style.height =
-                `${size}px`;
-
-            particle.style.left =
-                `${Math.random() * 100}%`;
-
-            particle.style.animationDuration =
-                `${Math.random() * 5 + 4}s`;
-
-            particle.style.animationDelay =
-                `${Math.random() * 5}s`;
-
-            particle.style.opacity =
-                `${Math.random() * 0.8 + 0.2}`;
-
-            particleContainer.appendChild(particle);
+            loadingParticles.appendChild(particle);
         }
     }
 
-
     function createStars() {
-        for (let index = 0; index < 48; index += 1) {
-            const star =
-                document.createElement("span");
+        for (let index = 0; index < 45; index += 1) {
+            const star = document.createElement("span");
 
             star.className = "star";
 
-            const size =
-                Math.random() * 3 + 1;
+            const size = Math.random() * 3 + 1;
 
-            star.style.width =
-                `${size}px`;
+            star.style.width = `${size}px`;
+            star.style.height = `${size}px`;
+            star.style.left = `${Math.random() * 100}%`;
+            star.style.top = `${Math.random() * 100}%`;
+            star.style.animationDuration = `${Math.random() * 2.5 + 1.5}s`;
+            star.style.animationDelay = `${Math.random() * 3}s`;
 
-            star.style.height =
-                `${size}px`;
-
-            star.style.left =
-                `${Math.random() * 100}%`;
-
-            star.style.top =
-                `${Math.random() * 100}%`;
-
-            star.style.animationDuration =
-                `${Math.random() * 2.5 + 1.5}s`;
-
-            star.style.animationDelay =
-                `${Math.random() * 3}s`;
-
-            starContainer.appendChild(star);
+            openingStars.appendChild(star);
         }
     }
-
-
-    function updateLoadingMessage(progress) {
-        const messageIndex =
-            Math.min(
-                loadingMessages.length - 1,
-                Math.floor(
-                    progress /
-                    (100 / loadingMessages.length)
-                )
-            );
-
-        loadingMessage.textContent =
-            loadingMessages[messageIndex];
-    }
-
 
     function startLoading() {
         let progress = 0;
 
-        const loadingInterval =
-            setInterval(() => {
-                progress +=
-                    Math.floor(Math.random() * 7) + 2;
+        const loadingInterval = setInterval(() => {
+            progress += Math.floor(Math.random() * 7) + 2;
 
-                if (progress >= 100) {
-                    progress = 100;
-                }
+            if (progress >= 100) {
+                progress = 100;
+            }
 
-                loadingProgress.style.width =
-                    `${progress}%`;
+            loadingProgress.style.width = `${progress}%`;
+            loadingPercent.textContent = `${progress}%`;
 
-                loadingPercent.textContent =
-                    `${progress}%`;
+            const messageIndex = Math.min(
+                loadingMessages.length - 1,
+                Math.floor(progress / 20)
+            );
 
-                updateLoadingMessage(progress);
+            loadingMessage.textContent = loadingMessages[messageIndex];
 
-                if (progress === 100) {
-                    clearInterval(loadingInterval);
+            if (progress === 100) {
+                clearInterval(loadingInterval);
 
-                    setTimeout(() => {
-                        showScreen(openingScreen);
-                    }, 650);
-                }
-            }, 75);
+                setTimeout(() => {
+                    showScreen(openingScreen);
+                }, 600);
+            }
+        }, 75);
     }
-
-
-    function updateSoundButton() {
-        soundButton.textContent =
-            soundEnabled
-                ? "🔊 Suara Aktif"
-                : "🔇 Suara Nonaktif";
-    }
-
 
     enterButton.addEventListener("click", () => {
-        showScreen(welcomeScreen);
+        showScreen(loginScreen);
 
-        showNotification(
-            "Portal berhasil dibuka!"
-        );
+        setTimeout(() => {
+            usernameInput.focus();
+        }, 300);
     });
-
 
     soundButton.addEventListener("click", () => {
         soundEnabled = !soundEnabled;
 
-        updateSoundButton();
+        soundButton.textContent = soundEnabled
+            ? "🔊 Suara Aktif"
+            : "🔇 Suara Nonaktif";
 
         showNotification(
             soundEnabled
@@ -218,18 +146,50 @@ document.addEventListener("DOMContentLoaded", () => {
         );
     });
 
+    loginBackButton.addEventListener("click", () => {
+        usernameInput.value = "";
+        usernameError.textContent = "";
 
-    backButton.addEventListener("click", () => {
         showScreen(openingScreen);
-
-        showNotification(
-            "Kembali ke halaman pembuka."
-        );
     });
 
+    loginForm.addEventListener("submit", (event) => {
+        event.preventDefault();
+
+        const username = usernameInput.value.trim();
+
+        if (username.length < 3) {
+            usernameError.textContent =
+                "Username minimal harus berisi 3 karakter.";
+
+            usernameInput.focus();
+            return;
+        }
+
+        usernameError.textContent = "";
+        memberName.textContent = username;
+
+        localStorage.setItem("fantasyPortalUsername", username);
+
+        showScreen(lobbyScreen);
+        showNotification(`Selamat datang, ${username}!`);
+    });
+
+    usernameInput.addEventListener("input", () => {
+        usernameError.textContent = "";
+    });
+
+    logoutButton.addEventListener("click", () => {
+        localStorage.removeItem("fantasyPortalUsername");
+
+        usernameInput.value = "";
+        memberName.textContent = "Member";
+
+        showScreen(openingScreen);
+        showNotification("Berhasil keluar dari portal.");
+    });
 
     createParticles();
     createStars();
-    updateSoundButton();
     startLoading();
 });
