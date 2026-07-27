@@ -200,6 +200,21 @@ const spinBackButton = document.getElementById("spinBackButton");
 const spinButton = document.getElementById("spinButton");
 const spinWheel = document.getElementById("spinWheel");
 const spinResultText = document.getElementById("spinResultText");
+const coinBalance = document.getElementById("coinBalance");
+const diamondBalance = document.getElementById("diamondBalance");
+
+let totalCoins =
+    Number(localStorage.getItem("totalCoins")) || 0;
+
+let totalDiamonds =
+    Number(localStorage.getItem("totalDiamonds")) || 0;
+
+function updateBalanceDisplay() {
+    coinBalance.textContent = totalCoins;
+    diamondBalance.textContent = totalDiamonds;
+}
+
+updateBalanceDisplay();    
 const spinStatus = document.getElementById("spinStatus");
     
 menuCards.forEach((menuCard) => {
@@ -281,14 +296,38 @@ spinButton.addEventListener("click", () => {
         `rotate(${currentRotation}deg)`;
 
     setTimeout(() => {
-        spinResultText.textContent = selectedReward;
+    spinResultText.textContent = selectedReward;
 
-        spinStatus.textContent =
-            `Selamat! Kamu mendapatkan ${selectedReward}.`;
+spinStatus.textContent =
+    `Selamat! Kamu mendapatkan ${selectedReward}.`;
 
-        showNotification(
-            `Kamu mendapatkan ${selectedReward}!`
-        );
+if (selectedReward.includes("Coins")) {
+    const coinAmount = parseInt(selectedReward);
+
+    totalCoins += coinAmount;
+
+    localStorage.setItem(
+        "totalCoins",
+        totalCoins
+    );
+}
+
+if (selectedReward.includes("Diamond")) {
+    const diamondAmount = parseInt(selectedReward);
+
+    totalDiamonds += diamondAmount;
+
+    localStorage.setItem(
+        "totalDiamonds",
+        totalDiamonds
+    );
+}
+
+updateBalanceDisplay();
+
+showNotification(
+    `Kamu mendapatkan ${selectedReward}!`
+);
 
         isSpinning = false;
         spinButton.disabled = false;
