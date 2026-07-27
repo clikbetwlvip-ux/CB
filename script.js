@@ -191,16 +191,38 @@ document.addEventListener("DOMContentLoaded", () => {
     
     const menuCards = document.querySelectorAll(".menu-card");
 
+const dailyRewardScreen = document.getElementById("dailyRewardScreen");
+const rewardBackButton = document.getElementById("rewardBackButton");
+const claimRewardButton = document.getElementById("claimRewardButton");
+const rewardStatus = document.getElementById("rewardStatus");
+
 menuCards.forEach((menuCard) => {
     menuCard.addEventListener("click", () => {
         const menuName = menuCard.dataset.menu;
 
-        showNotification(
-            `${menuName} akan segera dibuka.`
-        );
+        if (menuName === "Daily Reward") {
+            showScreen(dailyRewardScreen);
+            return;
+        }
+
+        showNotification(`${menuName} akan segera dibuka.`);
     });
 });
 
+rewardBackButton.addEventListener("click", () => {
+    showScreen(lobbyScreen);
+});
+
+claimRewardButton.addEventListener("click", () => {
+    claimRewardButton.disabled = true;
+    claimRewardButton.querySelector(".button-text").textContent =
+        "✅ HADIAH BERHASIL DIKLAIM";
+
+    rewardStatus.textContent =
+        "Hadiah Hari 1 sudah masuk ke akun member.";
+
+    showNotification("Daily Reward berhasil diklaim.");
+});
     createParticles();
     createStars();
     startLoading();
