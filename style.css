@@ -711,3 +711,168 @@ img {
         margin-bottom: 12px;
     }
 }
+/* =========================
+   LOBBY MENU V0.3
+========================= */
+
+.lobby-content {
+    max-height: 94vh;
+    overflow-y: auto;
+}
+
+.lobby-header {
+    text-align: center;
+}
+
+.lobby-menu {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+    margin-top: 28px;
+}
+
+.menu-card {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    width: 100%;
+    min-height: 92px;
+    padding: 16px;
+
+    border: 1px solid rgba(255, 218, 80, 0.28);
+    border-radius: 18px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255, 255, 255, 0.1),
+            rgba(0, 0, 0, 0.22)
+        );
+
+    color: white;
+    text-align: left;
+
+    box-shadow:
+        0 12px 30px rgba(0, 0, 0, 0.25),
+        inset 0 1px 0 rgba(255, 255, 255, 0.08);
+
+    transition:
+        transform 0.2s ease,
+        border-color 0.2s ease,
+        background 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.menu-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(255, 218, 80, 0.72);
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255, 190, 35, 0.2),
+            rgba(119, 30, 178, 0.28)
+        );
+
+    box-shadow:
+        0 16px 36px rgba(0, 0, 0, 0.34),
+        0 0 22px rgba(255, 193, 44, 0.14);
+}
+
+.menu-card:active {
+    transform: scale(0.97);
+}
+
+.menu-icon {
+    display: grid;
+    place-items: center;
+    flex: 0 0 54px;
+
+    width: 54px;
+    height: 54px;
+
+    border: 1px solid rgba(255, 218, 80, 0.4);
+    border-radius: 16px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255, 215, 77, 0.22),
+            rgba(255, 67, 132, 0.14)
+        );
+
+    font-size: 28px;
+
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.12);
+}
+
+.menu-info {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.menu-info strong {
+    color: white;
+    font-size: 15px;
+}
+
+.menu-info small {
+    color: rgba(255, 255, 255, 0.58);
+    font-size: 11px;
+    line-height: 1.4;
+}
+
+.menu-arrow {
+    color: var(--gold);
+    font-size: 30px;
+    line-height: 1;
+}
+
+@media (max-width: 650px) {
+    .lobby-menu {
+        grid-template-columns: 1fr;
+    }
+
+    .lobby-content {
+        padding: 30px 18px;
+    }
+
+    .menu-card {
+        min-height: 82px;
+    }
+}
+
+@media (max-height: 720px) {
+    .lobby-logo {
+        width: min(235px, 66%);
+        margin-bottom: 14px;
+    }
+
+    .lobby-description {
+        margin-top: 10px;
+    }
+
+    .lobby-menu {
+        margin-top: 18px;
+        gap: 10px;
+    }
+
+    .menu-card {
+        min-height: 72px;
+        padding: 11px;
+    }
+
+    .menu-icon {
+        flex-basis: 46px;
+        width: 46px;
+        height: 46px;
+        font-size: 23px;
+    }
+
+    .logout-button {
+        margin-top: 15px;
+    }
+}
