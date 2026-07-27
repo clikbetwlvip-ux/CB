@@ -17,11 +17,17 @@
 
 <body>
 
-    <!-- LOADING SCREEN -->
+    <!-- ==============================
+         LOADING SCREEN
+    =============================== -->
     <section id="loadingScreen" class="screen active">
 
         <div class="loading-background"></div>
-        <div id="loadingParticles" class="particle-container"></div>
+
+        <div
+            id="loadingParticles"
+            class="particle-container"
+        ></div>
 
         <div class="loading-content">
 
@@ -36,10 +42,16 @@
             </p>
 
             <div class="loading-bar">
-                <div id="loadingProgress" class="loading-progress"></div>
+
+                <div
+                    id="loadingProgress"
+                    class="loading-progress"
+                ></div>
+
             </div>
 
             <div class="loading-information">
+
                 <span id="loadingMessage">
                     Menyiapkan dunia...
                 </span>
@@ -47,6 +59,7 @@
                 <strong id="loadingPercent">
                     0%
                 </strong>
+
             </div>
 
         </div>
@@ -54,16 +67,26 @@
     </section>
 
 
-    <!-- OPENING SCREEN -->
+    <!-- ==============================
+         OPENING SCREEN
+    =============================== -->
     <section id="openingScreen" class="screen">
 
         <div class="opening-background"></div>
         <div class="opening-overlay"></div>
 
-        <div id="openingStars" class="star-container"></div>
+        <div
+            id="openingStars"
+            class="star-container"
+        ></div>
 
-        <div class="portal-glow portal-glow-left"></div>
-        <div class="portal-glow portal-glow-right"></div>
+        <div
+            class="portal-glow portal-glow-left"
+        ></div>
+
+        <div
+            class="portal-glow portal-glow-right"
+        ></div>
 
         <main class="opening-content">
 
@@ -79,7 +102,10 @@
 
             <h1 class="opening-title">
                 FANTASY
-                <strong>PORTAL</strong>
+
+                <strong>
+                    PORTAL
+                </strong>
             </h1>
 
             <p class="opening-description">
@@ -92,10 +118,13 @@
                 class="enter-button"
                 type="button"
             >
+
                 <span class="button-shine"></span>
+
                 <span class="button-text">
                     ⚔️ MASUK KE PORTAL
                 </span>
+
             </button>
 
             <button
@@ -107,7 +136,7 @@
             </button>
 
             <p class="version-text">
-                CLICKBET88 FANTASY PORTAL • V0.1
+                CLICKBET88 FANTASY PORTAL • V0.2
             </p>
 
         </main>
@@ -115,38 +144,157 @@
     </section>
 
 
-    <!-- HALAMAN LANJUTAN SEMENTARA -->
-    <section id="welcomeScreen" class="screen">
+    <!-- ==============================
+         LOGIN SCREEN
+    =============================== -->
+    <section id="loginScreen" class="screen">
 
-        <div class="welcome-background"></div>
+        <div class="login-background"></div>
+        <div class="login-overlay"></div>
 
-        <main class="welcome-content">
+        <div
+            class="login-glow login-glow-left"
+        ></div>
+
+        <div
+            class="login-glow login-glow-right"
+        ></div>
+
+        <main class="login-container">
+
+            <div class="login-card">
+
+                <div class="login-icon">
+                    ⚔️
+                </div>
+
+                <img
+                    class="logo login-logo"
+                    src="https://clickbet88sedekahrejeki05.xyz/storage/webpersonalize/d54f5304-03b3-49f7-b283-e6fe0c595ca7.gif"
+                    alt="CLICKBET88"
+                >
+
+                <span class="login-label">
+                    MEMBER ACCESS
+                </span>
+
+                <h2 class="login-title">
+                    Masuk ke Portal
+                </h2>
+
+                <p class="login-description">
+                    Masukkan username member untuk melanjutkan
+                    perjalanan ke dunia Fantasy Portal.
+                </p>
+
+                <form
+                    id="loginForm"
+                    class="login-form"
+                >
+
+                    <div class="input-group">
+
+                        <label for="usernameInput">
+                            Username Member
+                        </label>
+
+                        <div class="input-wrapper">
+
+                            <span class="input-icon">
+                                👤
+                            </span>
+
+                            <input
+                                id="usernameInput"
+                                name="username"
+                                type="text"
+                                placeholder="Masukkan username"
+                                autocomplete="off"
+                                maxlength="20"
+                            >
+
+                        </div>
+
+                        <small
+                            id="usernameError"
+                            class="input-error"
+                        ></small>
+
+                    </div>
+
+                    <button
+                        id="loginButton"
+                        class="login-button"
+                        type="submit"
+                    >
+
+                        <span class="button-shine"></span>
+
+                        <span class="button-text">
+                            ⚔️ MULAI PETUALANGAN
+                        </span>
+
+                    </button>
+
+                </form>
+
+                <button
+                    id="loginBackButton"
+                    class="login-back-button"
+                    type="button"
+                >
+                    ← KEMBALI KE PORTAL
+                </button>
+
+                <p class="login-footer">
+                    Selamat datang di dunia khusus member CLICKBET88.
+                </p>
+
+            </div>
+
+        </main>
+
+    </section>
+
+
+    <!-- ==============================
+         LOBBY SEMENTARA
+    =============================== -->
+    <section id="lobbyScreen" class="screen">
+
+        <div class="lobby-background"></div>
+        <div class="lobby-overlay"></div>
+
+        <main class="lobby-content">
 
             <img
-                class="logo welcome-logo"
+                class="logo lobby-logo"
                 src="https://clickbet88sedekahrejeki05.xyz/storage/webpersonalize/d54f5304-03b3-49f7-b283-e6fe0c595ca7.gif"
                 alt="CLICKBET88"
             >
 
-            <span class="welcome-label">
+            <span class="lobby-label">
                 PORTAL BERHASIL DIBUKA
             </span>
 
-            <h2>
-                Selamat Datang, Member!
+            <h2 class="lobby-title">
+                Selamat Datang,
+                <strong id="memberName">
+                    Member
+                </strong>
             </h2>
 
-            <p>
-                Loading dan opening sudah berhasil.
-                Tahap selanjutnya adalah halaman login member.
+            <p class="lobby-description">
+                Login berhasil. Tahap berikutnya kita akan membuat
+                lobby anime dan daftar mini game.
             </p>
 
             <button
-                id="backButton"
-                class="back-button"
+                id="logoutButton"
+                class="logout-button"
                 type="button"
             >
-                ← KEMBALI
+                ← KELUAR
             </button>
 
         </main>
@@ -154,11 +302,18 @@
     </section>
 
 
-    <!-- NOTIFIKASI -->
-    <div id="notification" class="notification">
+    <!-- ==============================
+         NOTIFIKASI
+    =============================== -->
+    <div
+        id="notification"
+        class="notification"
+    >
+
         <span id="notificationText">
             Selamat datang.
         </span>
+
     </div>
 
 
