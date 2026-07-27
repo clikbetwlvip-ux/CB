@@ -206,16 +206,39 @@ const spinWheel = document.getElementById("spinWheel");
 const spinResultText = document.getElementById("spinResultText");
 const coinBalance = document.getElementById("coinBalance");
 const diamondBalance = document.getElementById("diamondBalance");
+const mysteryBoxAmount =
+    document.getElementById("mysteryBoxAmount");
 
+const freeSpinAmount =
+    document.getElementById("freeSpinAmount");
+
+const jackpotTokenAmount =
+    document.getElementById("jackpotTokenAmount");
 let totalCoins =
     Number(localStorage.getItem("totalCoins")) || 0;
 
 let totalDiamonds =
     Number(localStorage.getItem("totalDiamonds")) || 0;
+let totalMysteryBoxes =
+    Number(localStorage.getItem("totalMysteryBoxes")) || 0;
 
+let totalFreeSpins =
+    Number(localStorage.getItem("totalFreeSpins")) || 0;
+
+let totalJackpotTokens =
+    Number(localStorage.getItem("totalJackpotTokens")) || 0;
 function updateBalanceDisplay() {
     coinBalance.textContent = totalCoins;
     diamondBalance.textContent = totalDiamonds;
+
+    mysteryBoxAmount.textContent =
+        `x${totalMysteryBoxes}`;
+
+    freeSpinAmount.textContent =
+        `x${totalFreeSpins}`;
+
+    jackpotTokenAmount.textContent =
+        `x${totalJackpotTokens}`;
 }
 
 updateBalanceDisplay();    
@@ -332,7 +355,32 @@ if (selectedReward.includes("Diamond")) {
         totalDiamonds
     );
 }
+if (selectedReward === "Mystery Box") {
+    totalMysteryBoxes += 1;
 
+    localStorage.setItem(
+        "totalMysteryBoxes",
+        totalMysteryBoxes
+    );
+}
+
+if (selectedReward === "Free Spin") {
+    totalFreeSpins += 1;
+
+    localStorage.setItem(
+        "totalFreeSpins",
+        totalFreeSpins
+    );
+}
+
+if (selectedReward === "Jackpot") {
+    totalJackpotTokens += 1;
+
+    localStorage.setItem(
+        "totalJackpotTokens",
+        totalJackpotTokens
+    );
+}
 updateBalanceDisplay();
 
 showNotification(
