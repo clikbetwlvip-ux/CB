@@ -242,8 +242,36 @@ spinButton.addEventListener("click", () => {
     const extraRotation = 1800 + Math.floor(Math.random() * 360);
     currentRotation += extraRotation;
 
-    spinWheel.style.transform =
-        `rotate(${currentRotation}deg)`;
+spinWheel.style.transform =
+    `rotate(${currentRotation}deg)`;
+
+setTimeout(() => {
+    const rewards = [
+        "10 Coins",
+        "20 Coins",
+        "50 Coins",
+        "100 Coins",
+        "1 Diamond",
+        "Mystery Box",
+        "Free Spin",
+        "Jackpot Bonus"
+    ];
+
+    const randomReward =
+        rewards[Math.floor(Math.random() * rewards.length)];
+
+    spinResultText.textContent = randomReward;
+    spinStatus.textContent = `Selamat! Kamu mendapatkan ${randomReward}.`;
+
+    spinButton.querySelector(".button-text").textContent =
+        "✅ SPIN SELESAI";
+
+    showNotification(
+        `Kamu mendapatkan ${randomReward}!`
+    );
+
+    isSpinning = false;
+}, 5200);
 });
     
 claimRewardButton.addEventListener("click", () => {
