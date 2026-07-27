@@ -1824,3 +1824,152 @@ img {
         font-size: 16px;
     }
 }
+.inventory-container {
+    width: min(92%, 620px);
+    margin: auto;
+    padding: 28px;
+    border-radius: 24px;
+
+    background: rgba(20, 12, 42, 0.92);
+    border: 1px solid rgba(255, 216, 74, 0.45);
+
+    box-shadow:
+        0 15px 50px rgba(0, 0, 0, 0.45),
+        0 0 30px rgba(142, 74, 255, 0.18);
+}
+
+.inventory-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    margin-top: 18px;
+    text-align: left;
+}
+
+.inventory-title-icon {
+    font-size: 48px;
+}
+
+.inventory-header h2 {
+    margin: 2px 0 0;
+    color: #ffd84a;
+    font-size: 30px;
+}
+
+.inventory-subtitle {
+    margin: 0;
+    color: #d6c2e8;
+    font-size: 12px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+}
+
+.inventory-description {
+    margin: 18px auto 24px;
+    color: #d9cde5;
+    text-align: center;
+    line-height: 1.6;
+}
+
+.inventory-list {
+    display: grid;
+    gap: 12px;
+}
+
+.inventory-item {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    min-height: 72px;
+    padding: 13px 16px;
+
+    border-radius: 16px;
+    border: 1px solid rgba(255, 216, 74, 0.32);
+    background: rgba(255, 255, 255, 0.055);
+}
+
+.inventory-item-icon {
+    width: 48px;
+    height: 48px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 14px;
+    background: rgba(255, 216, 74, 0.12);
+    font-size: 28px;
+}
+
+.inventory-item-info {
+    flex: 1;
+}
+
+.inventory-item-info small {
+    display: block;
+    margin-bottom: 4px;
+    color: #c7b8d6;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.inventory-item-info strong {
+    color: #ffffff;
+    font-size: 16px;
+}
+
+.inventory-item-amount {
+    min-width: 52px;
+    padding: 8px 10px;
+
+    border-radius: 12px;
+    background: rgba(255, 216, 74, 0.14);
+
+    color: #ffd84a;
+    font-size: 18px;
+    font-weight: 700;
+    text-align: center;
+}
+
+.inventory-status {
+    margin: 20px 0 0;
+    color: #cfc1dd;
+    font-size: 13px;
+    text-align: center;
+}
+
+@media (max-width: 480px) {
+    .inventory-container {
+        width: 94%;
+        padding: 20px 15px;
+    }
+
+    .inventory-header h2 {
+        font-size: 25px;
+    }
+
+    .inventory-title-icon {
+        font-size: 40px;
+    }
+
+    .inventory-item {
+        padding: 11px;
+    }
+
+    .inventory-item-icon {
+        width: 42px;
+        height: 42px;
+        font-size: 24px;
+    }
+
+    .inventory-item-info strong {
+        font-size: 14px;
+    }
+
+    .inventory-item-amount {
+        min-width: 44px;
+        font-size: 16px;
+    }
+}
