@@ -230,6 +230,17 @@ spinBackButton.addEventListener("click", () => {
 let isSpinning = false;
 let currentRotation = 0;
 
+const spinRewards = [
+    "10 Coins",
+    "20 Coins",
+    "50 Coins",
+    "100 Coins",
+    "1 Diamond",
+    "Mystery Box",
+    "Free Spin",
+    "Jackpot"
+];
+
 spinButton.addEventListener("click", () => {
     if (isSpinning) {
         return;
@@ -237,55 +248,61 @@ spinButton.addEventListener("click", () => {
 
     isSpinning = true;
     spinButton.disabled = true;
+
+    spinResultText.textContent = "Menentukan hadiah...";
     spinStatus.textContent = "Roda sedang berputar...";
 
-    const extraRotation = 1800 + Math.floor(Math.random() * 360);
-    currentRotation += extraRotation;
-
-spinWheel.style.transform =
-    `rotate(${currentRotation}deg)`;
-
-setTimeout(() => {
-    const rewards = [
-        "10 Coins",
-        "20 Coins",
-        "50 Coins",
-        "100 Coins",
-        "1 Diamond",
-        "Mystery Box",
-        "Free Spin",
-        "Jackpot Bonus"
-    ];
-
-    const randomReward =
-        rewards[Math.floor(Math.random() * rewards.length)];
-
-    spinResultText.textContent = randomReward;
-    spinStatus.textContent = `Selamat! Kamu mendapatkan ${randomReward}.`;
-
     spinButton.querySelector(".button-text").textContent =
-        "✅ SPIN SELESAI";
+        "🎡 SEDANG BERPUTAR...";
 
-    showNotification(
-    `Kamu mendapatkan ${randomReward}!`
-);
+    const segmentAngle = 360 / spinRewards.length;
 
-isSpinning = false;
+    const selectedIndex =
+        Math.floor(Math.random() * spinRewards.length);
 
-spinButton.disabled = false;
+    const selectedReward =
+        spinRewards[selectedIndex];
 
-spinButton.querySelector(".button-text").textContent =
-    "🎡 PUTAR LAGI";
+    const rewardCenterAngle =
+        selectedIndex * segmentAngle + segmentAngle / 2;
 
-setTimeout(() => {
-    spinStatus.textContent =
-        "Kesempatan spin berikutnya siap digunakan.";
-}, 1800);
+    const targetAngle =
+        (360 - rewardCenterAngle) % 360;
 
-}, 5200);
-});
-    
+    const normalizedRotation =
+        ((currentRotation % 360) + 360) % 360;
 
+    const angleDifference =
+        (targetAngle - normalizedRotation + 360) % 360;
+
+    currentRotation += 1800 + angleDifference;
+
+    spinWheel.style.transform =
+        `rotate(${currentRotation}deg)`;
+
+    setTimeout(() => {
+        spinResultText.textContent = selectedReward;
+
+        spinStatus.textContent =
+            `Selamat! Kamu mendapatkan ${selectedReward}.`;
+
+        showNotification(
+            `Kamu mendapatkan ${selectedReward}!`
+        );
+
+        isSpinning = false;
+        spinButton.disabled = false;
+
+        spinButton.querySelector(".button-text").textContent =
+            "🎡 PUTAR LAGI";
+
+        setTimeout(() => {
+            spinStatus.textContent =
+                "Kesempatan spin berikutnya siap digunakan.";
+        }, 1800);
+
+    }, 5200);
+}); 
     claimRewardButton.addEventListener("click", () => {
     claimRewardButton.disabled = true;
     claimRewardButton.querySelector(".button-text").textContent =
