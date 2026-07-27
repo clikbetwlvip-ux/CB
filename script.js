@@ -195,17 +195,28 @@ const dailyRewardScreen = document.getElementById("dailyRewardScreen");
 const rewardBackButton = document.getElementById("rewardBackButton");
 const claimRewardButton = document.getElementById("claimRewardButton");
 const rewardStatus = document.getElementById("rewardStatus");
-
+const luckySpinScreen = document.getElementById("luckySpinScreen");
+const spinBackButton = document.getElementById("spinBackButton");
+const spinButton = document.getElementById("spinButton");
+const spinWheel = document.getElementById("spinWheel");
+const spinResultText = document.getElementById("spinResultText");
+const spinStatus = document.getElementById("spinStatus");
+    
 menuCards.forEach((menuCard) => {
     menuCard.addEventListener("click", () => {
         const menuName = menuCard.dataset.menu;
 
-        if (menuName === "Daily Reward") {
-            showScreen(dailyRewardScreen);
-            return;
-        }
+     if (menuName === "Daily Reward") {
+    showScreen(dailyRewardScreen);
+    return;
+}
 
-        showNotification(`${menuName} akan segera dibuka.`);
+if (menuName === "Lucky Spin") {
+    showScreen(luckySpinScreen);
+    return;
+}
+
+showNotification(`${menuName} akan segera dibuka.`);
     });
 });
 
@@ -213,6 +224,28 @@ rewardBackButton.addEventListener("click", () => {
     showScreen(lobbyScreen);
 });
 
+spinBackButton.addEventListener("click", () => {
+    showScreen(lobbyScreen);
+});
+let isSpinning = false;
+let currentRotation = 0;
+
+spinButton.addEventListener("click", () => {
+    if (isSpinning) {
+        return;
+    }
+
+    isSpinning = true;
+    spinButton.disabled = true;
+    spinStatus.textContent = "Roda sedang berputar...";
+
+    const extraRotation = 1800 + Math.floor(Math.random() * 360);
+    currentRotation += extraRotation;
+
+    spinWheel.style.transform =
+        `rotate(${currentRotation}deg)`;
+});
+    
 claimRewardButton.addEventListener("click", () => {
     claimRewardButton.disabled = true;
     claimRewardButton.querySelector(".button-text").textContent =
