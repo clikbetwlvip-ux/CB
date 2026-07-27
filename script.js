@@ -188,6 +188,18 @@ document.addEventListener("DOMContentLoaded", () => {
         showScreen(openingScreen);
         showNotification("Berhasil keluar dari portal.");
     });
+    
+    const menuCards = document.querySelectorAll(".menu-card");
+
+menuCards.forEach((menuCard) => {
+    menuCard.addEventListener("click", () => {
+        const menuName = menuCard.dataset.menu;
+
+        showNotification(
+            `${menuName} akan segera dibuka.`
+        );
+    });
+});
 
     createParticles();
     createStars();
