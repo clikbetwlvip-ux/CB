@@ -1353,3 +1353,126 @@ img {
     margin-top:12px;
     color:#bbbbbb;
 }
+.spin-wheel {
+    position: relative;
+    width: 320px;
+    height: 320px;
+    margin: 30px auto;
+    border-radius: 50%;
+    border: 10px solid #ffd86b;
+    background:
+        conic-gradient(
+            #ff5d8f 0deg 45deg,
+            #7c5cff 45deg 90deg,
+            #1fc7a4 90deg 135deg,
+            #ffb547 135deg 180deg,
+            #ff6b6b 180deg 225deg,
+            #4da6ff 225deg 270deg,
+            #ad65ff 270deg 315deg,
+            #f7d154 315deg 360deg
+        );
+    box-shadow:
+        0 0 20px rgba(255, 216, 107, 0.7),
+        0 0 45px rgba(124, 92, 255, 0.35);
+    transition: transform 5.2s cubic-bezier(0.12, 0.75, 0.18, 1);
+    overflow: hidden;
+}
+
+.spin-wheel::before {
+    content: "";
+    position: absolute;
+    inset: 14px;
+    border-radius: 50%;
+    border: 3px solid rgba(255, 255, 255, 0.65);
+    pointer-events: none;
+}
+
+.wheel-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 86px;
+    height: 86px;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    font-size: 38px;
+    background: radial-gradient(circle, #fff6b7, #ffb81d);
+    border: 7px solid #fff3a0;
+    box-shadow:
+        0 0 15px rgba(255, 221, 87, 0.9),
+        inset 0 0 12px rgba(255, 255, 255, 0.8);
+    z-index: 5;
+}
+
+.wheel-label {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 105px;
+    text-align: center;
+    font-size: 12px;
+    font-weight: 800;
+    color: #ffffff;
+    text-shadow:
+        0 2px 4px rgba(0, 0, 0, 0.9),
+        0 0 5px rgba(0, 0, 0, 0.6);
+    transform-origin: 0 0;
+    z-index: 3;
+}
+
+.label-1 {
+    transform: rotate(22.5deg) translate(72px) rotate(-22.5deg);
+}
+
+.label-2 {
+    transform: rotate(67.5deg) translate(72px) rotate(-67.5deg);
+}
+
+.label-3 {
+    transform: rotate(112.5deg) translate(72px) rotate(-112.5deg);
+}
+
+.label-4 {
+    transform: rotate(157.5deg) translate(72px) rotate(-157.5deg);
+}
+
+.label-5 {
+    transform: rotate(202.5deg) translate(72px) rotate(-202.5deg);
+}
+
+.label-6 {
+    transform: rotate(247.5deg) translate(72px) rotate(-247.5deg);
+}
+
+.label-7 {
+    transform: rotate(292.5deg) translate(72px) rotate(-292.5deg);
+}
+
+.label-8 {
+    transform: rotate(337.5deg) translate(72px) rotate(-337.5deg);
+}
+
+@media (max-width: 480px) {
+    .spin-wheel {
+        width: 270px;
+        height: 270px;
+    }
+
+    .wheel-label {
+        width: 90px;
+        font-size: 10px;
+    }
+
+    .label-1,
+    .label-2,
+    .label-3,
+    .label-4,
+    .label-5,
+    .label-6,
+    .label-7,
+    .label-8 {
+        translate: -8px -4px;
+    }
+}
