@@ -197,6 +197,10 @@ const claimRewardButton = document.getElementById("claimRewardButton");
 const rewardStatus = document.getElementById("rewardStatus");
 const luckySpinScreen = document.getElementById("luckySpinScreen");
 const spinBackButton = document.getElementById("spinBackButton");
+const inventoryScreen =
+document.getElementById("inventoryScreen");
+const inventoryBackButton =
+document.getElementById("inventoryBackButton");
 const spinButton = document.getElementById("spinButton");
 const spinWheel = document.getElementById("spinWheel");
 const spinResultText = document.getElementById("spinResultText");
@@ -230,7 +234,10 @@ if (menuName === "Lucky Spin") {
     showScreen(luckySpinScreen);
     return;
 }
-
+if (menuName === "Inventory") {
+    showScreen(inventoryScreen);
+    return;
+}
 showNotification(`${menuName} akan segera dibuka.`);
     });
 });
@@ -242,6 +249,9 @@ rewardBackButton.addEventListener("click", () => {
 spinBackButton.addEventListener("click", () => {
     showScreen(lobbyScreen);
 });
+inventoryBackButton.addEventListener("click", () => {
+    showScreen(lobbyScreen);
+});    
 let isSpinning = false;
 let currentRotation = 0;
 
