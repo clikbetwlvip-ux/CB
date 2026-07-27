@@ -1762,3 +1762,65 @@ img {
         transform: rotate(337.5deg) translateY(-88px) rotate(-337.5deg);
     }
 }
+/* ==============================
+   MEMBER BALANCE
+============================== */
+
+.member-balance{
+    display:flex;
+    justify-content:center;
+    gap:16px;
+    margin:25px 0;
+}
+
+.balance-item{
+    width:150px;
+    height:58px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
+
+    border-radius:14px;
+    border:1px solid rgba(255,210,70,.6);
+
+    background:rgba(255,255,255,.05);
+    backdrop-filter:blur(8px);
+}
+
+.balance-icon{
+    font-size:26px;
+}
+
+.balance-item small{
+    display:block;
+    font-size:10px;
+    color:#d9c7e8;
+}
+
+.balance-item strong{
+    display:block;
+    color:#FFD84A;
+    font-size:20px;
+    font-weight:700;
+}
+
+@media (max-width: 480px) {
+    .member-balance {
+        gap: 8px;
+    }
+
+    .balance-item {
+        min-width: 105px;
+        padding: 8px 11px;
+    }
+
+    .balance-icon {
+        font-size: 23px;
+    }
+
+    .balance-item strong {
+        font-size: 16px;
+    }
+}
