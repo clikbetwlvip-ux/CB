@@ -267,14 +267,26 @@ setTimeout(() => {
         "✅ SPIN SELESAI";
 
     showNotification(
-        `Kamu mendapatkan ${randomReward}!`
-    );
+    `Kamu mendapatkan ${randomReward}!`
+);
 
-    isSpinning = false;
+isSpinning = false;
+
+spinButton.disabled = false;
+
+spinButton.querySelector(".button-text").textContent =
+    "🎡 PUTAR LAGI";
+
+setTimeout(() => {
+    spinStatus.textContent =
+        "Kesempatan spin berikutnya siap digunakan.";
+}, 1800);
+
 }, 5200);
 });
     
-claimRewardButton.addEventListener("click", () => {
+
+    claimRewardButton.addEventListener("click", () => {
     claimRewardButton.disabled = true;
     claimRewardButton.querySelector(".button-text").textContent =
         "✅ HADIAH BERHASIL DIKLAIM";
